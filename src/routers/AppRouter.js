@@ -1,24 +1,27 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {
     BrowserRouter as Router,
     Switch,
     Route,
     Redirect
   } from 'react-router-dom';
-import { DcScreen } from '../components/dc/DcScreen';
-import { HeroScreen } from '../components/heroes/HeroScreen';
-import { SearchScreen } from '../components/search/SearchScreen';
+import { AddSearch } from '../components/AddSearch';
+import { ProductScreen } from '../components/product/ProductScreen';
+import { ResultScreen } from '../components/search/ResultScreen';
 
 
 export const AppRouter = () => {
-    return (
-        <Router>            
+    const [ query, setQuery] = useState();
+  
+    return (       
+        
+        <Router>  
+                <AddSearch setQuery={ setQuery } />   
                 <div className="container mt-2">
                     <Switch>
-                        <Route exact path="/hero/:heroeId" component={ HeroScreen } />
-                        <Route exact path="/dc" component={ DcScreen} />
-                        <Route exact path="/search" component={ SearchScreen } />
-                        <Redirect to="/search" />
+                        <Route exact path="/items/:productId" component={ ProductScreen } />
+                        <Route exact path="/items" component={ ResultScreen } />
+                        
                     </Switch>
                 </div>
         </Router>
