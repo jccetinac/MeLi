@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 export const ProductCard = ({
     id,
     title,
-    url,
+    thumbnail,
     price
 }) => {
 
@@ -12,7 +12,7 @@ export const ProductCard = ({
         <div className="card ms-3 animate__animated animate__fadeIn w-50" >
             <div className="row no-gutters">
                 <div className="col-md-4">
-                    <img src={ url } className="card-img" alt={ title } />
+                    <img src={ thumbnail } className="card-img" alt={ title } />
                 </div>
                 <div className="col-md-8">
                     
