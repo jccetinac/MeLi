@@ -24,7 +24,7 @@ export const ProductScreen = ({ history }) => {
 
     }
 
-    const { id, title, url, price } = product;
+    const { id, title, url, price, description } = product;
     
     return (
         <div className="content-fluid">
@@ -47,7 +47,7 @@ export const ProductScreen = ({ history }) => {
                 </ul>
 
                 <h5> description </h5>
-                <p> { title } </p>
+                <p> { description || ' nada ' } </p>
 
                 <button 
                     className="btn btn-outline-info"
