@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import { useParams, Redirect } from 'react-router-dom';
 import { useFetchProductById } from "../../hooks/useFetchProductById";
 
@@ -6,7 +6,6 @@ export const ProductScreen = ({ history }) => {
 
     const { productId } = useParams();
 
-    //const product = useMemo(() => getProductById( productId ), [ productId ]);
 
     const { data:product, loading } = useFetchProductById( productId );
     console.log(product);
@@ -25,16 +24,14 @@ export const ProductScreen = ({ history }) => {
 
     }
 
-    const {
-        id,
-        title,
-        url,
-        price
-    } = product;
+    const { id, title, url, price } = product;
     
     return (
-        <div className="row mt-5">
-            <div className="col-4">
+        <div className="content-fluid">
+            <h4> {(loading === true) && <b>cargando</b>} </h4>
+            <div className="row md-12">
+
+                <div className="col-4">
                 <img 
                     src={ url }
                     alt={ id }
@@ -42,7 +39,7 @@ export const ProductScreen = ({ history }) => {
                 />
             </div>
 
-            <div className="col-8 animate__animated animate__fadeIn">
+                <div className="col-8 animate__animated animate__fadeIn">
                 <h3> { title } </h3>
                 <ul className="list-group list-group-flush">
                     <li className="list-group-item"> <b> Alter ego: </b> { title } </li>
@@ -61,6 +58,8 @@ export const ProductScreen = ({ history }) => {
 
             </div>
 
+            </div>
         </div>
+
     )
 }

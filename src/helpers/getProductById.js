@@ -3,10 +3,10 @@ import axios from "axios";
 export const getProductById = async( idProduct ) => {
 
 
+    const urlLocal=`http://localhost:4200/api/items/${ encodeURI( idProduct ) }`;  
 
-    const url = `https://api.mercadolibre.com/items/${ encodeURI( idProduct ) }`;
+    const resp = await axios.get(urlLocal);
 
-    const resp = await axios.get(url);
     console.log(resp);
     const { id, title, price, thumbnail } = await resp.data;
 

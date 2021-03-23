@@ -12,7 +12,7 @@ import { ResultScreen } from '../components/search/ResultScreen';
 
 export const AppRouter = () => {
     const [ query, setQuery] = useState();
-  
+    console.log(query);
     return (       
         
         <Router>  
@@ -21,6 +21,7 @@ export const AppRouter = () => {
                     <Switch>
                         <Route exact path="/items/:productId" component={ ProductScreen } />
                         <Route exact path="/items" component={ ResultScreen } />
+                        <Redirect to ="/" />
                         
                     </Switch>
                 </div>
