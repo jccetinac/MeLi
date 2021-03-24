@@ -27,14 +27,27 @@ export const AddSearch = ({ setQuery }) => {
         <div className="container">
         <form onSubmit={ handleSubmit }>
             <div className="d-flex justify-content-start">
-                <img src="../assets/img/meli-logo.png" className="logo pr-3" />
-                <input 
-                    className="w-75"
-                    type="text"
+                <div className=" w-20">
+                 <img src="../assets/img/meli-logo.png" className="logo pr-3" />       
+                </div>
+                <div class="input-group w-80">
+                    <input 
+                    type="text" 
+                    class="form-control" 
+                    placeholder="Nunca dejes de buscar" 
+                    aria-label="Nunca dejes de buscar" 
                     value={ inputValue }
                     onChange={ handleInputChange }
-                />
-                <button className="btn btn-default">search</button>               
+                    />
+                    <button 
+                    class="input-group-text" 
+                    id="basic-addon2" >
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                        </svg>
+                    </button>
+                </div>
+           
             </div>
         </form>
         </div>

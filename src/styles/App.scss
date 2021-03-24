@@ -1,16 +1,35 @@
 $primary-color: #ffe600;
-$secondary-color: #f0f0f0;
+$secondary-color: #eeeeee;
 
-body{
+.meli{
     background-color: $secondary-color;
+
+    .nav-bar{
+        background-color: $primary-color;
+
+        .form-control{
+            border: 0px;
+            
+            &:focus {
+                color: unset;
+                border-color: unset;
+                box-shadow: unset;
+                }    
+        }
+        .input-group-text{
+            border: 0px;
+            border-radius: 0px;
+            border-top-right-radius: .25rem;
+            border-bottom-right-radius: .25rem;
+        }
+    }
+
+
+    .logo {
+        width: 60px;
+        margin-top: 7%;
+    }
+
 }
 
-.logo{
-    width: 50px;
-    height: auto;
-}
 
-
-.nav-bar{
-    background-color: $primary-color;
-}
