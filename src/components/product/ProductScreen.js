@@ -31,7 +31,7 @@ export const ProductScreen = ({ history }) => {
             <BreadCrumbs categories={categories}  />
             <div className="container bg-white mb-2 p-5">
                     {(loading === true) && 
-                        <img src="../assets/img/loader.gif" className="loader" alt="loading" />       
+                        <img src="http://laapperia.com/loader.gif" className="loader" alt="loading" />       
                     }
 
                     {(loading === false) && 

@@ -15,7 +15,7 @@ export const ResultScreen = () => {
     return (
         <div className="container-fluid mb-5">
                     {(loading === true) && 
-                    <img src="../assets/img/loader.gif" className="loader" alt="loading" />       
+                    <img src="http://laapperia.com/loader.gif" className="loader" alt="loading" />       
                     }
                     
                     { 

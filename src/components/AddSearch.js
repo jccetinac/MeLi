@@ -29,7 +29,7 @@ export const AddSearch = ({ setQuery }) => {
             <div className="d-flex justify-content-start">
                 <div className=" w-20">
                  <img 
-                 src="../assets/img/meli-logo.png" 
+                 src="http://laapperia.com/meli-logo.png" 
                  className="logo pr-3"  
                  onClick={ handleReturn }
                  alt="logo-mercadolibre" />       
