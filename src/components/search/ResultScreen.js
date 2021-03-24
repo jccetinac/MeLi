@@ -13,27 +13,24 @@ export const ResultScreen = () => {
     const { data:productsFiltered, loading } = useFetchProducts( search );
 
     return (
-        <div>
-                            <div className="col-12">
-
-                    <h4> Results </h4>
-                    <h4> {(loading === true) && <b>cargando</b>} </h4>
-
-                    <hr />
-
+        <div className="container-fluid mb-5">
+                    {(loading === true) && 
+                    <img src="../assets/img/loader.gif" className="loader" alt="loading" />       
+                    }
+                    
                     { 
                         (search ==='') 
                             && 
-                            <div className="alert alert-info">
-                                Search a product
+                            <div className="alert alert-info p-4">
+                                <p className="text-center">realiza tu búsqueda</p>
                             </div>
                     }
 
                     { 
                         (search !=='' && productsFiltered.length === 0 && loading === false ) 
                             && 
-                            <div className="alert alert-danger">
-                                There is not a product with { search }
+                            <div className="alert p-4">
+                               <p className="text-center">No hay un producto que coincida con tu búsqueda: { search }</p>
                             </div>
                     }
 
@@ -46,7 +43,7 @@ export const ResultScreen = () => {
                         ))
                     }
 
-                </div>
+
           </div>
     )
 }

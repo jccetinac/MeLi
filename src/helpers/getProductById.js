@@ -23,10 +23,7 @@ export const getProductById = async( idProduct ) => {
             description: description,
             sold_quantity: sold_quantity
         };
-    
-    console.log(['prod BY ID']);
-    console.log(prod);
-    
+        
     return prod;
 
 

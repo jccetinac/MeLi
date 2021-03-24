@@ -18,30 +18,29 @@ export const ProductCard = ({
 
 
     return (
-        <div className="card ms-3 animate__animated animate__fadeIn w-50" >
+        <div className="
+        product-card
+        animate__animated animate__fadeIn
+        w-100 p-3 bg-white" 
+        >
             <div className="row no-gutters">
-                <div className="col-md-4">
-                    <img src={ picture } className="card-img" alt={ title } />
+                <div className="col-md-3">
+                    <Link to={ `/items/${ id }` }>
+                        <img src={ picture } className="card-img" alt={ title } />
+                    </Link>
                 </div>
-                <div className="col-md-8">
+                <div className="col-md-6">
                     
                     <div className="card-body">
-                        <h5 className="card-title"> { title } </h5>
-                        <p className="card-text"> { title} </p>
-
-                    
-                        <p className="card-text">
-                            <small className="text-muted"> { amount } </small>
-                            <small className="text-muted"> { currency } </small>
-
-                        </p>
-
-                        <Link to={ `/items/${ id }` }>
-                           ver
-                        </Link>
-
+                        <h1 className="price">
+                            $ { amount }<span className={ free_shipping? 'check-light on':'check-light off' }  ></span>
+                        </h1>
+                        <p> <Link to={ `/items/${ id }` }>{ title }</Link> </p>
                     </div>
 
+                </div>
+                <div className="col-md-3">
+                    <span className="badge p-2 mt-3">Ubicacion</span>
                 </div>
             </div>
         </div>
