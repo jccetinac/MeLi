@@ -9,7 +9,7 @@ export const getProducts = async( query ) => {
     console.log(resp);
     const { data } = await resp;
 
-    const newList = data.map( product=>{
+    const newList = data.items.map( product=>{
         const { id, title, price, picture, condition, free_shipping, sold_quantity, description } =  product;
         const prod =  {
                 id: id,
