@@ -24,7 +24,7 @@ export const ProductScreen = ({ history }) => {
 
     }
 
-    const { id, title, url, price, description } = product;
+    const { id, title, picture, amount, currency, decimals, condition, free_shipping, sold_quantity, description } = product;
     
     return (
         <div className="content-fluid">
@@ -33,17 +33,25 @@ export const ProductScreen = ({ history }) => {
 
                 <div className="col-4">
                 <img 
-                    src={ url }
+                    src={ picture }
                     alt={ id }
                     className="img-thumbnail animate__animated animate__fadeInLeft"
                 />
+                <p>currency: { currency }</p>
+                <p>amount: { amount }</p>
+                <p>decimals: { decimals }</p>
+                <p>conditions: { condition }</p>
+                <p>free_shipping: { free_shipping }</p>
+                <p>sold_quantity: { sold_quantity }</p>
+
+
             </div>
 
                 <div className="col-8 animate__animated animate__fadeIn">
                 <h3> { title } </h3>
                 <ul className="list-group list-group-flush">
                     <li className="list-group-item"> <b> Alter ego: </b> { title } </li>
-                    <li className="list-group-item"> <b> Price: </b> { price } </li>
+                    <li className="list-group-item"> <b> Price: </b> { amount } </li>
                 </ul>
 
                 <h5> description </h5>

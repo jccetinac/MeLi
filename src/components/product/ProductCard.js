@@ -2,17 +2,26 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 export const ProductCard = ({
-    id,
-    title,
-    thumbnail,
-    price
+    id, 
+    title, 
+    picture, 
+    amount, 
+    currency, 
+    decimals, 
+    condition, 
+    free_shipping, 
+    sold_quantity, 
+    description
 }) => {
+
+
+
 
     return (
         <div className="card ms-3 animate__animated animate__fadeIn w-50" >
             <div className="row no-gutters">
                 <div className="col-md-4">
-                    <img src={ thumbnail } className="card-img" alt={ title } />
+                    <img src={ picture } className="card-img" alt={ title } />
                 </div>
                 <div className="col-md-8">
                     
@@ -22,7 +31,9 @@ export const ProductCard = ({
 
                     
                         <p className="card-text">
-                            <small className="text-muted"> { price } </small>
+                            <small className="text-muted"> { amount } </small>
+                            <small className="text-muted"> { currency } </small>
+
                         </p>
 
                         <Link to={ `/items/${ id }` }>

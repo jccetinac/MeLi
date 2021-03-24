@@ -8,15 +8,20 @@ export const getProductById = async( idProduct ) => {
 
     const resp = await axios.get(urlLocal);
 
-    console.log(resp);
-    const { id, title, price, thumbnail, description } = await resp.data;
+    
+    const { id, title, price, picture, condition, free_shipping, sold_quantity, description } = await resp.data;
 
     const prod =  {
             id: id,
             title: title,
-            url: thumbnail,
-            price: price,
-            description: description
+            picture: picture,
+            amount: price.amount,
+            currency: price.currency,
+            decimals: price.decimals,
+            condition: condition,
+            free_shipping: free_shipping,
+            description: description,
+            sold_quantity: sold_quantity
         };
     
     console.log(['prod BY ID']);
