@@ -22,13 +22,23 @@ export const AddSearch = ({ setQuery }) => {
     }
 
     return (
+
+        <div className="nav-bar p-1">
+        <div className="container">
         <form onSubmit={ handleSubmit }>
-            <input 
-                type="text"
-                value={ inputValue }
-                onChange={ handleInputChange }
-            />
+            <div className="d-flex justify-content-start">
+                <img src="../assets/img/meli-logo.png" className="logo pr-3" />
+                <input 
+                    className="w-75"
+                    type="text"
+                    value={ inputValue }
+                    onChange={ handleInputChange }
+                />
+                <button className="btn btn-default">search</button>               
+            </div>
         </form>
+        </div>
+        </div>
     )
 }
 
