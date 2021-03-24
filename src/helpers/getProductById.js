@@ -2,8 +2,9 @@ import axios from "axios";
 
 export const getProductById = async( idProduct ) => {
 
+    const baseUrl = process.env.REACT_APP_API_URL;
 
-    const urlLocal=`http://localhost:4200/api/items/${ encodeURI( idProduct ) }`;  
+    const urlLocal=`${ baseUrl }items/${ encodeURI( idProduct ) }`;  
 
     const resp = await axios.get(urlLocal);
 
