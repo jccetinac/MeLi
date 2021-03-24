@@ -15,7 +15,7 @@ export const ResultScreen = () => {
     return (
         <div className="container-fluid mb-5">
                     {(loading === true) && 
-                    <img src="http://laapperia.com/loader.gif" className="loader" alt="loading" />       
+                    <img src="https://libreriaacuario.com.co/wp-content/uploads/2021/03/loader.gif" className="loader" alt="loading" />       
                     }
                     
                     { 

@@ -29,10 +29,10 @@ export const AddSearch = ({ setQuery }) => {
             <div className="d-flex justify-content-start">
                 <div className=" w-20">
                  <img 
-                 src="http://laapperia.com/meli-logo.png" 
+                 src="https://libreriaacuario.com.co/wp-content/uploads/2021/03/meli-logo.png" 
                  className="logo pr-3"  
                  onClick={ handleReturn }
-                 alt="logo-mercadolibre" />       
+                 alt="MeLi" />       
                 </div>
                 <div className="input-group w-80">
                     <input 
