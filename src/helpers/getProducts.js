@@ -7,7 +7,6 @@ export const getProducts = async( query ) => {
     const urlLocal=`${ baseUrl }${ CONST.LIST.API_PATH_PRODUCTS }${ CONST.LIST.API_PATH_SEARCH }${ encodeURI( query ) }`; 
     const resp = await axios.get(urlLocal);
 
-    console.log(resp);
     const { data } = await resp;
 
     const productList = data.items.map( product=>{

@@ -24,9 +24,6 @@ export const useFetchProducts = ( q ) => {
 
     }, [q])
 
-
-    console.log(state);
-
     return state; // { data:[], loading: true };
 
 
