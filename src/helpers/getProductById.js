@@ -10,7 +10,7 @@ export const getProductById = async( idProduct ) => {
     const resp = await axios.get(urlLocal);
 
     
-    const { id, title, price, picture, condition, free_shipping, sold_quantity, description } = await resp.data.item;
+    const { id, title, price, picture, condition, free_shipping, sold_quantity, description, category } = await resp.data.item;
 
     const prod =  {
             id: id,
@@ -22,7 +22,8 @@ export const getProductById = async( idProduct ) => {
             condition: condition,
             free_shipping: free_shipping,
             description: description,
-            sold_quantity: sold_quantity
+            sold_quantity: sold_quantity,
+            category: category
         };
         
     return prod;

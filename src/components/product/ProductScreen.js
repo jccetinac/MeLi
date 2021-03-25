@@ -11,7 +11,6 @@ export const ProductScreen = ({ history }) => {
     const { productId } = useParams();
     const LOADER = CONST.LIST.IMG_LOADER;
 
-    const categories=['macro', 'medioum', 'mini'];
     const { data:product, loading } = useFetchProductById( productId );
 
     if ( !product ) {
@@ -28,11 +27,11 @@ export const ProductScreen = ({ history }) => {
 
     }
 
-    const {  title, picture, amount,  decimals,  description } = product;
+    const {  title, picture, amount,  decimals,  description, category, condition } = product;
     
     return (
         <main className="container mt-3">
-            <BreadCrumbs categories={categories}  />
+            <BreadCrumbs categories={[category]}  />
             <div className="container bg-white mb-2 p-5">
                     {(loading === true) && 
                         <img src={ LOADER } className="loader" alt="loading" />       
@@ -54,7 +53,7 @@ export const ProductScreen = ({ history }) => {
                             
                             <aside className="col-sm-4">
 
-                                <div className="badge badge-light p-2 mb-3">{CONST.LIST.TAGS}</div>
+                                <div className="badge badge-light p-2 mb-3">{condition}</div>
                                 <h4><b>{ title }</b></h4>
                                 
                                 <h1>$ <span>{ amount } <sup>{ decimals }</sup></span></h1>
