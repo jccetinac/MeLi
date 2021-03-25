@@ -10,17 +10,9 @@ export const ProductCard = ({
     picture, 
     amount, 
     condition, 
-    free_shipping
+    free_shipping,
+    city
 }) => {
-
-/*    id, 
-    title, 
-    picture, 
-    amount, 
-    condition, 
-    free_shipping */
-
-
 
     return (
         <article className="
@@ -45,7 +37,7 @@ export const ProductCard = ({
 
                 </div>
                 <div className="col-md-3">
-                    <span className="badge p-2 mt-3">{ condition }</span>
+                    <span className="badge p-2 mt-3">{ city }</span>
                 </div>
             </div>
         </article>
