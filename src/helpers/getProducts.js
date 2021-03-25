@@ -1,12 +1,12 @@
 import axios from "axios";
+const CONST = require('../utilities/constants');
 
 export const getProducts = async( query ) => {
     const baseUrl = process.env.REACT_APP_API_URL;
 
-    const urlLocal=`${ baseUrl }items?search=${ encodeURI( query ) }`; 
+    const urlLocal=`${ baseUrl }${ CONST.LIST.API_PATH_PRODUCTS }${ CONST.LIST.API_PATH_SEARCH }${ encodeURI( query ) }`; 
     const resp = await axios.get(urlLocal);
 
-    console.log(resp);
     const { data } = await resp;
 
     const newList = data.items.map( product=>{

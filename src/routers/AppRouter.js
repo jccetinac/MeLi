@@ -8,18 +8,21 @@ import {
 import { AddSearch } from '../components/AddSearch';
 import { ProductScreen } from '../components/product/ProductScreen';
 import { ResultScreen } from '../components/search/ResultScreen';
+const CONST = require('../utilities/constants');
 
 
 export const AppRouter = () => {
     const [ query, setQuery] = useState();
+    const ROUTE_PRODUCT = `${ CONST.LIST.ROUTE_APP }${ CONST.LIST.ROUTE_PATH_PRODUCT}`;
+    const ROUTE_SEARCH = CONST.LIST.ROUTE_APP;
     return (       
         
         <Router>  
                 <AddSearch setQuery={ setQuery } />   
                 <div className="container mt-2">
                     <Switch>
-                        <Route exact path="/items/:productId" component={ ProductScreen } />
-                        <Route exact path="/items" component={ ResultScreen } />
+                        <Route exact path={ ROUTE_PRODUCT } component={ ProductScreen } />
+                        <Route exact path={ ROUTE_SEARCH } component={ ResultScreen } />
                         <Redirect to ="/" />
                         
                     </Switch>

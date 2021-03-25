@@ -3,9 +3,13 @@ import { useParams, Redirect } from 'react-router-dom';
 import { useFetchProductById } from "../../hooks/useFetchProductById";
 import { BreadCrumbs } from "../utilities/breadcrumb";
 
+const CONST = require('../../utilities/constants');
+
+
 export const ProductScreen = ({ history }) => {
 
     const { productId } = useParams();
+    const LOADER = CONST.LIST.IMG_LOADER;
 
     const categories=['macro', 'medioum', 'mini'];
     const { data:product, loading } = useFetchProductById( productId );
@@ -31,7 +35,7 @@ export const ProductScreen = ({ history }) => {
             <BreadCrumbs categories={categories}  />
             <div className="container bg-white mb-2 p-5">
                     {(loading === true) && 
-                        <img src="https://libreriaacuario.com.co/wp-content/uploads/2021/03/loader.gif" className="loader" alt="loading" />       
+                        <img src={ LOADER } className="loader" alt="loading" />       
                     }
 
                     {(loading === false) && 
@@ -43,19 +47,19 @@ export const ProductScreen = ({ history }) => {
                                     alt={ id }
                                     className="img-fluid animate__animated animate__fadeIn"
                                 />
-                                <h3 className="mt-2 mb-3"> Descripcion del producto </h3>
-                                <p  className="text-justify paragraph" > { description || ' nada ' } </p>
+                                <h3 className="mt-2 mb-3">{ CONST.LIST.TITLE_DESCRIPTION }</h3>
+                                <p  className="text-justify paragraph" > { description || '' } </p>
 
                             </div>
                             
                             <div className="col-sm-4">
 
-                                <div className="badge badge-light p-2 mb-3">categories</div>
+                                <div className="badge badge-light p-2 mb-3">{CONST.LIST.TAGS}</div>
                                 <h4><b>{ title }</b></h4>
                                 
                                 <h1>$ <span>{ amount } <sup>{ decimals }</sup></span></h1>
                                 
-                                <button className="btn btn-primary w-100" onClick={ handleReturn }>Comprar</button>
+                                <button className="btn btn-primary w-100" onClick={ handleReturn }>{CONST.LIST.BTN_SELL}</button>
                             </div>
                         </div>      
                     }

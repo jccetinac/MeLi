@@ -1,10 +1,11 @@
 import axios from "axios";
+const CONST = require('../utilities/constants');
 
 export const getProductById = async( idProduct ) => {
 
     const baseUrl = process.env.REACT_APP_API_URL;
 
-    const urlLocal=`${ baseUrl }items/${ encodeURI( idProduct ) }`;  
+    const urlLocal=`${ baseUrl }${CONST.LIST.API_PATH_PRODUCTS}/${ encodeURI( idProduct ) }`;  
 
     const resp = await axios.get(urlLocal);
 

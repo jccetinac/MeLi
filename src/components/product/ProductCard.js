@@ -1,6 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+const CONST = require('../../utilities/constants');
+
+
 export const ProductCard = ({
     id, 
     title, 
@@ -25,7 +28,7 @@ export const ProductCard = ({
         >
             <div className="row no-gutters">
                 <div className="col-md-3">
-                    <Link to={ `/items/${ id }` }>
+                    <Link to={ `${CONST.LIST.ROUTE_APP}/${ id }` }>
                         <img src={ picture } className="card-img" alt={ title } />
                     </Link>
                 </div>
@@ -35,12 +38,12 @@ export const ProductCard = ({
                         <h1 className="price">
                             $ { amount }<span className={ free_shipping? 'check-light on':'check-light off' }  ></span>
                         </h1>
-                        <p> <Link to={ `/items/${ id }` }>{ title }</Link> </p>
+                        <p> <Link to={ `${CONST.LIST.ROUTE_APP}/${ id }` }>{ title }</Link> </p>
                     </div>
 
                 </div>
                 <div className="col-md-3">
-                    <span className="badge p-2 mt-3">Ubicacion</span>
+                    <span className="badge p-2 mt-3">{ condition }</span>
                 </div>
             </div>
         </div>
