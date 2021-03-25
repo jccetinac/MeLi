@@ -6,16 +6,18 @@ export const useFetchProducts = ( q ) => {
     
     const [state, setState] = useState({
         data: [],
+        categories:[],
         loading: true
     });
 
     useEffect( () => {
 
         getProducts( q )
-            .then( products => {
+            .then( response => {
                 
                 setState({
-                    data: products,
+                    data: response.products,
+                    categories: response.categories,
                     loading: false
                 });
             })
@@ -23,7 +25,7 @@ export const useFetchProducts = ( q ) => {
     }, [q])
 
 
-
+    console.log(state);
 
     return state; // { data:[], loading: true };
 

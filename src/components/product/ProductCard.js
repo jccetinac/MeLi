@@ -13,11 +13,17 @@ export const ProductCard = ({
     free_shipping
 }) => {
 
+/*    id, 
+    title, 
+    picture, 
+    amount, 
+    condition, 
+    free_shipping */
 
 
 
     return (
-        <div className="
+        <article className="
         product-card
         animate__animated animate__fadeIn
         w-100 p-3 bg-white" 
@@ -42,7 +48,7 @@ export const ProductCard = ({
                     <span className="badge p-2 mt-3">{ condition }</span>
                 </div>
             </div>
-        </div>
+        </article>
     )
 
 }

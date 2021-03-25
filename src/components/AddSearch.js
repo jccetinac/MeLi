@@ -26,7 +26,7 @@ export const AddSearch = ({ setQuery }) => {
 
     return (
 
-        <div className="nav-bar p-1">
+        <nav className="nav-bar p-1">
         <div className="container">
         <form onSubmit={ handleSubmit }>
             <div className="d-flex justify-content-start">
@@ -58,7 +58,7 @@ export const AddSearch = ({ setQuery }) => {
             </div>
         </form>
         </div>
-        </div>
+        </nav>
     )
 }
 

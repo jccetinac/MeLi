@@ -28,10 +28,10 @@ export const ProductScreen = ({ history }) => {
 
     }
 
-    const { id, title, picture, amount,  decimals,  description } = product;
+    const {  title, picture, amount,  decimals,  description } = product;
     
     return (
-        <div className="container mt-3">
+        <main className="container mt-3">
             <BreadCrumbs categories={categories}  />
             <div className="container bg-white mb-2 p-5">
                     {(loading === true) && 
@@ -40,19 +40,19 @@ export const ProductScreen = ({ history }) => {
 
                     {(loading === false) && 
                         <div className="row product-screen">
-                            <div className="col-sm-8">
+                            <section className="col-sm-8">
 
                                 <img 
                                     src={ picture }
-                                    alt={ id }
+                                    alt={ title }
                                     className="img-fluid animate__animated animate__fadeIn"
                                 />
                                 <h3 className="mt-2 mb-3">{ CONST.LIST.TITLE_DESCRIPTION }</h3>
                                 <p  className="text-justify paragraph" > { description || '' } </p>
 
-                            </div>
+                            </section>
                             
-                            <div className="col-sm-4">
+                            <aside className="col-sm-4">
 
                                 <div className="badge badge-light p-2 mb-3">{CONST.LIST.TAGS}</div>
                                 <h4><b>{ title }</b></h4>
@@ -60,12 +60,12 @@ export const ProductScreen = ({ history }) => {
                                 <h1>$ <span>{ amount } <sup>{ decimals }</sup></span></h1>
                                 
                                 <button className="btn btn-primary w-100" onClick={ handleReturn }>{CONST.LIST.BTN_SELL}</button>
-                            </div>
+                            </aside>
                         </div>      
                     }
                         
             </div>
-        </div>
+        </main>
 
     )
 }
