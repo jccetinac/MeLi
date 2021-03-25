@@ -12,6 +12,7 @@ const CONST = require('../utilities/constants');
 
 
 export const AppRouter = () => {
+    // eslint-disable-next-line 
     const [ query, setQuery] = useState();
     const ROUTE_PRODUCT = `${ CONST.LIST.ROUTE_APP }${ CONST.LIST.ROUTE_PATH_PRODUCT}`;
     const ROUTE_SEARCH = CONST.LIST.ROUTE_APP;
