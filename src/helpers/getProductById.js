@@ -9,7 +9,7 @@ export const getProductById = async( idProduct ) => {
     const resp = await axios.get(urlLocal);
 
     
-    const { id, title, price, picture, condition, free_shipping, sold_quantity, description } = await resp.data;
+    const { id, title, price, picture, condition, free_shipping, sold_quantity, description } = await resp.data.item;
 
     const prod =  {
             id: id,

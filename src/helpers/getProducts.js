@@ -10,7 +10,7 @@ export const getProducts = async( query ) => {
     const { data } = await resp;
 
     const newList = data.items.map( product=>{
-        const { id, title, price, picture, condition, free_shipping, sold_quantity, description } =  product;
+        const { id, title, price, picture, condition, free_shipping, description } =  product;
         const prod =  {
                 id: id,
                 title: title,
@@ -20,8 +20,7 @@ export const getProducts = async( query ) => {
                 decimals: price.decimals,
                 condition: condition,
                 free_shipping: free_shipping,
-                description: description,
-                sold_quantity: sold_quantity
+                description: description
             };
         return prod;    
     });
