@@ -9,12 +9,8 @@ export const ProductCard = ({
     title, 
     picture, 
     amount, 
-    currency, 
-    decimals, 
     condition, 
-    free_shipping, 
-    sold_quantity, 
-    description
+    free_shipping
 }) => {
 
 
