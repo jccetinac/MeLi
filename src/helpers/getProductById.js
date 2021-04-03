@@ -7,7 +7,10 @@ export const getProductById = async( idProduct ) => {
 
     const urlLocal=`${ baseUrl }${CONST.LIST.API_PATH_PRODUCTS}/${ encodeURI( idProduct ) }`;  
 
-    const resp = await axios.get(urlLocal);
+    const resp = await axios.get(urlLocal,{
+        headers: { 'Access-Control-Allow-Origin': '*'}
+        }
+    );
 
     
     const { id, title, price, picture, condition, free_shipping, sold_quantity, description, category } = await resp.data.item;
